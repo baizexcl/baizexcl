@@ -1,0 +1,1238 @@
+/* =============================================
+   Nantong Baize New Material Technology Co., Ltd.
+   Advanced Animations Stylesheet
+   Volkswagen-inspired rich animations
+   ============================================= */
+
+/* =============================================
+   Scroll Reveal Animations
+   ============================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.reveal-rotate {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-rotate.active {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* =============================================
+   Staggered Animations
+   ============================================= */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* =============================================
+   Hero Section Animations
+   ============================================= */
+.hero-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: particleFloat 15s infinite linear;
+}
+
+.particle:nth-child(1) { left: 10%; animation-duration: 20s; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; animation-duration: 15s; animation-delay: 1s; }
+.particle:nth-child(3) { left: 30%; animation-duration: 25s; animation-delay: 2s; }
+.particle:nth-child(4) { left: 40%; animation-duration: 18s; animation-delay: 0.5s; }
+.particle:nth-child(5) { left: 50%; animation-duration: 22s; animation-delay: 3s; }
+.particle:nth-child(6) { left: 60%; animation-duration: 16s; animation-delay: 1.5s; }
+.particle:nth-child(7) { left: 70%; animation-duration: 24s; animation-delay: 2.5s; }
+.particle:nth-child(8) { left: 80%; animation-duration: 19s; animation-delay: 0.8s; }
+.particle:nth-child(9) { left: 90%; animation-duration: 21s; animation-delay: 4s; }
+.particle:nth-child(10) { left: 15%; animation-duration: 17s; animation-delay: 3.5s; }
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Hero Background Animation */
+.hero-bg-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.gradient-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: gradientPulse 8s ease-in-out infinite;
+}
+
+.gradient-circle-1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(237, 137, 54, 0.3);
+    top: 10%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.gradient-circle-2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(44, 82, 130, 0.4);
+    bottom: 20%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.gradient-circle-3 {
+    width: 250px;
+    height: 250px;
+    background: rgba(237, 137, 54, 0.2);
+    top: 50%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+@keyframes gradientPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Hero Title Animation */
+.hero-title-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: wordReveal 0.8s ease-out forwards;
+}
+
+.hero-title-word:nth-child(1) { animation-delay: 0.3s; }
+.hero-title-word:nth-child(2) { animation-delay: 0.4s; }
+.hero-title-word:nth-child(3) { animation-delay: 0.5s; }
+.hero-title-word:nth-child(4) { animation-delay: 0.6s; }
+.hero-title-word:nth-child(5) { animation-delay: 0.7s; }
+.hero-title-word:nth-child(6) { animation-delay: 0.8s; }
+
+@keyframes wordReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Subtitle Animation */
+.hero-subtitle {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: subtitleReveal 1s ease-out 0.5s forwards;
+}
+
+@keyframes subtitleReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =============================================
+   Feature Cards Animations
+   ============================================= */
+.feature-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.feature-card:hover::after {
+    left: 100%;
+}
+
+.feature-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon::before {
+    transform: translateX(100%);
+}
+
+/* Icon Bounce Animation on Hover */
+.feature-card:hover .feature-icon {
+    animation: iconBounce 0.6s ease;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(-5px); }
+    75% { transform: translateY(-7px); }
+}
+
+/* =============================================
+   Service Cards Animations
+   ============================================= */
+.service-card {
+    position: relative;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.service-card:hover::before {
+    opacity: 0.05;
+}
+
+.service-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.service-card:hover .service-image::before {
+    opacity: 1;
+}
+
+.service-card:hover .service-image {
+    animation: imageZoom 0.6s ease forwards;
+}
+
+@keyframes imageZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* =============================================
+   Stats Counter Animation
+   ============================================= */
+.stat-number {
+    position: relative;
+    display: inline-block;
+}
+
+.stat-number::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transition: width 0.5s ease;
+}
+
+.stat-item:hover .stat-number::after {
+    width: 100%;
+}
+
+/* Counter Animation Class */
+.counting {
+    animation: countPulse 0.5s ease;
+}
+
+@keyframes countPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* =============================================
+   Team Cards Animations
+   ============================================= */
+.team-card {
+    position: relative;
+}
+
+.team-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-image::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(
+        to top,
+        rgba(26, 54, 93, 0.9),
+        transparent
+    );
+    transition: height 0.4s ease;
+    z-index: 1;
+}
+
+.team-card:hover .team-image::before {
+    height: 100%;
+}
+
+.team-info {
+    position: relative;
+    z-index: 2;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-info {
+    transform: translateY(0);
+}
+
+/* =============================================
+   News Cards Animations
+   ============================================= */
+.news-card {
+    position: relative;
+}
+
+.news-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.news-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.news-card:hover .news-image::before {
+    opacity: 0.3;
+}
+
+.news-card:hover .news-image {
+    animation: imageZoom 0.6s ease forwards;
+}
+
+.news-date {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-date {
+    transform: scale(1.1);
+}
+
+/* =============================================
+   Button Animations
+   ============================================= */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.btn-primary:active::after {
+    transform: scale(20);
+    opacity: 0;
+}
+
+/* Button Ripple Effect */
+.btn {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* =============================================
+   Navigation Animations
+   ============================================= */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+.nav-link.active::before {
+    width: 100%;
+}
+
+/* Mobile Navigation Animation */
+.nav-toggle span {
+    transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* =============================================
+   Form Animations
+   ============================================= */
+.form-group input,
+.form-group textarea {
+    position: relative;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    animation: inputFocus 0.3s ease;
+}
+
+@keyframes inputFocus {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Input Label Animation */
+.form-group label {
+    position: relative;
+    display: inline-block;
+}
+
+.form-group input:focus + label::after,
+.form-group textarea:focus + label::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    animation: labelUnderline 0.3s ease;
+}
+
+@keyframes labelUnderline {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* =============================================
+   Footer Animations
+   ============================================= */
+.footer-links a {
+    position: relative;
+    display: inline-block;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    width: 100%;
+}
+
+.social-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--accent-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.social-link:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.social-link svg {
+    position: relative;
+    z-index: 1;
+}
+
+/* =============================================
+   Phone Mockup Animations
+   ============================================= */
+.phone-mockup {
+    animation: phoneFloat 3s ease-in-out infinite;
+}
+
+@keyframes phoneFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+    75% {
+        transform: translateY(10px) rotate(-2deg);
+    }
+}
+
+/* Phone Glow Effect */
+.phone-mockup::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(237, 137, 54, 0.2) 0%,
+        transparent 70%
+    );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: phoneGlow 3s ease-in-out infinite;
+}
+
+@keyframes phoneGlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* =============================================
+   App Screen Animations
+   ============================================= */
+.phone-screen {
+    animation: screenContent 2s ease-in-out infinite;
+}
+
+@keyframes screenContent {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* =============================================
+   Store Badge Animations
+   ============================================= */
+.store-badge {
+    position: relative;
+    overflow: hidden;
+}
+
+.store-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.store-badge:hover::before {
+    left: 100%;
+}
+
+/* =============================================
+   Section Divider Animations
+   ============================================= */
+.section-divider {
+    position: relative;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--secondary-color),
+        transparent
+    );
+    margin: 2rem 0;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: dividerPulse 2s ease-in-out infinite;
+}
+
+@keyframes dividerPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.5); }
+}
+
+/* =============================================
+   Loading Animations
+   ============================================= */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--white);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Skeleton Loading */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* =============================================
+   Parallax Effects
+   ============================================= */
+.parallax-element {
+    transition: transform 0.1s ease-out;
+}
+
+/* =============================================
+   Mouse Cursor Effects
+   ============================================= */
+.cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease, opacity 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower.active {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.5;
+}
+
+/* =============================================
+   Scroll Progress Indicator
+   ============================================= */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--gradient-accent);
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
+
+/* =============================================
+   Back to Top Button Animation
+   ============================================= */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: var(--shadow-lg);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.back-to-top svg {
+    fill: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-2px);
+}
+
+/* =============================================
+   Page Transition Animations
+   ============================================= */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    z-index: 9999;
+    transform: translateX(-100%);
+}
+
+.page-transition.active {
+    animation: pageSlideIn 0.5s ease forwards;
+}
+
+.page-transition.exit {
+    animation: pageSlideOut 0.5s ease forwards;
+}
+
+@keyframes pageSlideIn {
+    to { transform: translateX(0); }
+}
+
+@keyframes pageSlideOut {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+/* =============================================
+   Marquee Animation
+   ============================================= */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* =============================================
+   Video Background Animation
+   ============================================= */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 54, 93, 0.7);
+    animation: overlayPulse 4s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.5; }
+}
+
+/* =============================================
+   Accordion Animations
+   ============================================= */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+}
+
+.accordion-header {
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* =============================================
+   Tabs Animations
+   ============================================= */
+.tab-content {
+    display: none;
+    animation: tabFadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes tabFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-link {
+    position: relative;
+}
+
+.tab-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.tab-link.active::after {
+    width: 100%;
+}
+
+/* =============================================
+   Tooltip Animations
+   ============================================= */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    padding: 8px 12px;
+    background: var(--dark-bg);
+    color: var(--white);
+    font-size: 0.875rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* =============================================
+   Card Flip Animation
+   ============================================= */
+.flip-card {
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* =============================================
+   Animated Background Patterns
+   ============================================= */
+.animated-bg-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.wave-pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+    animation: wave 10s linear infinite;
+}
+
+@keyframes wave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* =============================================
+   Pulse Ring Animation
+   ============================================= */
+.pulse-ring {
+    position: relative;
+}
+
+.pulse-ring::before,
+.pulse-ring::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulseRing 2s ease-out infinite;
+    opacity: 0;
+}
+
+.pulse-ring::after {
+    animation-delay: 1s;
+}
+
+@keyframes pulseRing {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+    100% {
+        width: 150%;
+        height: 150%;
+        opacity: 0;
+    }
+}
+
+/* =============================================
+   Magnetic Button Effect
+   ============================================= */
+.magnetic-btn {
+    transition: transform 0.3s ease;
+}
+
+/* =============================================
+   Text Reveal Animation
+   ============================================= */
+.text-reveal {
+    overflow: hidden;
+}
+
+.text-reveal span {
+    display: inline-block;
+    transform: translateY(100%);
+    animation: textRevealUp 0.8s ease forwards;
+}
+
+@keyframes textRevealUp {
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* =============================================
+   Image Gallery Lightbox Animation
+   ============================================= */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
+}
+
+/* =============================================
+   Conclusion Animation
+   ============================================= */
+.conclusion-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.conclusion-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transition: width 0.5s ease;
+}
+
+.conclusion-underline:hover::after {
+    width: 100%;
+}
